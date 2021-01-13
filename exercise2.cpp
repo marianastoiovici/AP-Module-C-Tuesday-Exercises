@@ -4,22 +4,17 @@
 using namespace std;
 
 int main() {
-  string userInput;
-  string userInputCopy;
-  string userInputLower = "";
+  string input;
+  string copy;
 
   cout << "Please enter a word: ";
-  getline(cin, userInput);
-  //make a copy of the userInput
-  userInputCopy = userInput;
-
-  //loop through the userInputCopy, converts its characters to lower case and concatenate them to userInputLower
-  for(int i=0; i<userInputCopy.length(); i++){
-    userInputCopy[i] = tolower(userInputCopy[i]);
-    userInputLower = userInputLower + userInputCopy[i];
+  getline(cin, input);
+  //make a copy of the input so that we don't modify the value of input 
+  copy = input;
+  // loop through the copy and change each character to its lower version
+  for(int i=0; i<copy.length(); i++){
+    copy[i] = tolower(copy[i]);
   }
-
-  cout << "\n" << userInput << " converted to lower case is: " << userInputLower;
-
+  cout << input << " converted to lower case is: " << copy;
   return 0;
 }
